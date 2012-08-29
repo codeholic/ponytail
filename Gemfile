@@ -11,6 +11,8 @@ gem 'http_router'
 # Collection of async-proof rack middlewares - https://github.com/rkh/async-rack.git
 gem 'async-rack'
 
+gem 'eventmachine-tail'
+
 # For async Active Record models
 # gem 'mysql2', '~> 0.2.11'
 # gem 'activerecord', :require => 'active_record'
