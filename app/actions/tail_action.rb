@@ -13,12 +13,15 @@ class TailAction < Cramp::Action
   end
 
   def subscribe
+    puts 'subscribing...'
     @sid = @@channel.subscribe do |message|
+      puts 'posting a message...'
       render( { data: message }.to_json )
     end
   end
 
   def unsubscribe
+    puts 'unsubscribing...'
     @@channel.unsubscribe(@sid) if @sid
   end
 
