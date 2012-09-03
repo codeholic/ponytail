@@ -2,7 +2,20 @@
 <head>
   <title>Ponytail</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="https://raw.github.com/rwldrn/jquery.eventsource/e3daa527b65b27a27e600eadac99b0ad1d6b41d2/jquery.eventsource.js"></script>
   <script>
+    $.eventsource({
+      label: "event-source-ponytail",
+      url: "/tail",
+      dataType: "json",
+      open: function( data ) {
+        console.log( data );
+      },
+      message: function( data ) {
+        console.log( data );
+      }
+    });
+    /*
     (function poll() {
       $.ajax({
         url: "/tail",
@@ -15,6 +28,7 @@
         error: function(error) { poll(); }
       })
     })();
+    */
   </script>
 </head>
 <body>

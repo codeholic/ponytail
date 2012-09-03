@@ -2,7 +2,7 @@ require 'eventmachine-tail'
 require 'json'
 
 class TailAction < Cramp::Action
-  self.transport = :long_polling
+  self.transport = :sse
 
   on_start :subscribe
   on_finish :unsubscribe
