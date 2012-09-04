@@ -2,4 +2,5 @@
 HttpRouter.new do
   add('/').to(HomeAction)
   add('/tail').to(TailAction)
+  add('/slow').to(SlowAction)
 end
